@@ -2,21 +2,21 @@
 public class BoardPrinter {
 
 	private static final char[][] largeX = {
-		{ ' ', '\\', ' ', '/',  ' ' },
-		{ ' ', ' ' , 'X', ' ',  ' ' },
-		{ ' ', '/' , ' ', '\\', ' ' }
+		{ ' ', ' ', '\\', ' ', '/',  ' ', ' ' },
+		{ ' ', ' ', ' ' , 'X', ' ',  ' ', ' ' },
+		{ ' ', ' ', '/' , ' ', '\\', ' ', ' ' }
 	};
 	
 	private static final char[][] largeO = {
-		{ '┌', '─', '─', '─', '┐'},
-		{ '│', ' ', ' ', ' ', '│'},
-		{ '└', '─', '─', '─', '┘'}
+		{ ' ', '┌', '─', '─', '─', '┐', ' '},
+		{ ' ', '│', ' ', ' ', ' ', '│', ' '},
+		{ ' ', '└', '─', '─', '─', '┘', ' '}
 	};
 	
 	private static final char vertical = '|';
 	private static final char horizontal = '-';
 	
-	private static final int largeCharWidth = 5;
+	private static final int largeCharWidth = 7;
 	private static final int largeCharHeight = 3;
 	private static final int padding = 1;
 	private static final int border = 1;
