@@ -8,9 +8,9 @@ public class BoardPrinter {
 	};
 	
 	private static final char[][] largeO = {
-		{ '|', '-', '-', '-', '|'},
-		{ '|', ' ', ' ', ' ', '|'},
-		{ '|', '-', '-', '-', '|'}
+		{ '┌', '─', '─', '─', '┐'},
+		{ '│', ' ', ' ', ' ', '│'},
+		{ '└', '─', '─', '─', '┘'}
 	};
 	
 	private static final char vertical = '|';
