@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 enum State { empty, x, o }
@@ -6,12 +7,24 @@ public class TicTacToe {
 	private static Scanner scanner;
 	
 	public static void main(String[] args) {
+		System.out.println(
+			"Welcome to TicTacToe. I'm sure you already know the rules, if you don't,\n"
+			+ "then, please, go get yourself a childhood.\n"
+			+ "\n"
+			+ "To play the CLI version, enter a number as indicated on the board.\n"
+			+ "The board and numbers have been optimized for keypad users.\n"
+			+ "If you lose, then know that you lost to a random number generator.\n"
+			+ "\n"
+			+ "Copyright (c) 2019 JaPNaA"
+		);
+		
 		scanner = new Scanner(System.in);
 		
 		while (true) {
 			new TicTacToe();
 			System.out.println("Play again? (y/N) > ");
 			if (scanner.next().toLowerCase().charAt(0) != 'y') {
+				System.out.println("NOOOOO What have you don--");
 				break;
 			}
 		}
@@ -58,14 +71,25 @@ public class TicTacToe {
 					System.out.println("Cell not empty!");
 				}
 			} catch (ArrayIndexOutOfBoundsException err) {
-				System.out.println("Invalid move!");
+				System.out.println("Invalid number!");
 			}
 		}
 	}
 	
 	private int getPlayerMove() {
-		System.out.print("1-9 > ");
-		return scanner.nextInt() - 1;
+		while (true) {
+			System.out.print("1-9 > ");
+			try {
+				return scanner.nextInt() - 1;
+			} catch (InputMismatchException err) {
+				if (scanner.nextLine().toLowerCase().charAt(0) == 'q') {
+					System.out.println("Quitting");
+					System.exit(0);
+				} else {
+					System.out.println("That's... not a number.");
+				}
+			}
+		}
 	}
 	
 	private void doComputerMove() {
