@@ -24,9 +24,10 @@ public class TicTacToe {
 		board = new Board();
 		
 		while (true) {
+			board.printBoard();
 			try { mainLoopStep(); }
 			catch (DoneException event) {
-				 System.out.println("Winner: " + board.getWinner());
+				 System.out.println(board.getWinnerString() + " won this game");
 				 break;
 			}
 		}

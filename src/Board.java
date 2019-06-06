@@ -39,6 +39,19 @@ public class Board {
 	public State getStateAt(int x, int y) {
 		return board[y][x];
 	}
+
+	public void setStateAt(int i, State state) {
+		Vector vec = indexToVec(i);
+		board[vec.y][vec.x] = state;
+	}
+	
+	public void setStateAt(Vector vec, State state) {
+		board[vec.y][vec.x] = state;
+	}
+	
+	public void setStateAt(int x, int y, State state) {
+		board[y][x] = state;
+	}
 	
 	public boolean isEmpty(int x, int y) {
 		return getStateAt(x, y) == State.empty;
@@ -67,21 +80,6 @@ public class Board {
 			return String.valueOf(stateToChar(winner));
 		}
 	}
-	
-
-	public void setStateAt(int i, State state) {
-		Vector vec = indexToVec(i);
-		board[vec.y][vec.x] = state;
-	}
-	
-	public void setStateAt(Vector vec, State state) {
-		board[vec.y][vec.x] = state;
-	}
-	
-	public void setStateAt(int x, int y, State state) {
-		board[y][x] = state;
-	}
-	
 	
 	public void printBoard() {
 		printBorderTop();
