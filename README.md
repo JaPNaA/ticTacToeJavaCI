@@ -1,6 +1,6 @@
 # TicTacToe Java CI
 
-A Tic Tac Toe game programed in java, with a Command Line Interface.
+A Tic Tac Toe game programed in Java, with a Command Line Interface.
 
 ---
 
