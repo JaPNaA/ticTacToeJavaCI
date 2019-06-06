@@ -6,7 +6,7 @@ A Tic Tac Toe game programed in Java, with a Command Line Interface.
 
 ## This program is superior because
 
-  - It prints the board every turn
+  - It prints a **big** board!
   - You only need to enter one number, once per turn
     - Optimized for the number pad
   - Uses Emus ;)
