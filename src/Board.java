@@ -2,14 +2,18 @@
 public class Board {
 	public final int width = 3;
 	public final int height = 3;
+	
+	public BoardPrinter printer;
+	
+	private State winner = State.empty;
+	private State board[][];
+
 	private final int middleX = width / 2;
 	private final int middleY = height / 2;
-	private State winner = State.empty;
-
-	private State board[][];
 	
 	Board() {
 		board = new State[width][height];
+		printer = new BoardPrinter(this);
 		this.fillBoard();
 	}
 
@@ -81,23 +85,6 @@ public class Board {
 		}
 	}
 	
-	public void printBoard() {
-		printBorderTop();
-		
-		for (int y = height - 1; y >= 0; y--) {
-			System.out.print('|');
-			
-			for (int x = 0; x < width; x++) {
-				System.out.print(getCharAt(x, y));
-			}
-			
-			System.out.print("|\n");
-		}
-		
-		printBorderTop();
-		
-		System.out.print("\n");
-	}
 
 	public void checkDone() throws DoneException {
 		try {
@@ -192,17 +179,6 @@ public class Board {
 		
 		throw new DoneException(State.empty);
 	}
-	
-
-	
-	private void printBorderTop() {
-		System.out.print('|');
-		for (int x = 0; x < width; x++) {
-			System.out.print('-');
-		}
-		System.out.print("|\n");
-	}
-	
 	
 	private char stateToChar(State state) {
 		switch(state) {

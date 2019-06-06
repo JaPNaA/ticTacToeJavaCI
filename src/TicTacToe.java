@@ -24,7 +24,7 @@ public class TicTacToe {
 		board = new Board();
 		
 		while (true) {
-			board.printBoard();
+			board.printer.print();
 			try { mainLoopStep(); }
 			catch (DoneException event) {
 				 System.out.println(board.getWinnerString() + " won this game");
@@ -36,13 +36,13 @@ public class TicTacToe {
 	
 	private void mainLoopStep() throws DoneException {
 		doPlayerMove();
-		board.printBoard();
+		board.printer.print();
 		board.checkDone();
 		
 		waitAMoment();
 		
 		doComputerMove();
-		board.printBoard();
+		board.printer.print();
 		board.checkDone();
 	}
 	
