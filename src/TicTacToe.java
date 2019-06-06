@@ -22,7 +22,7 @@ public class TicTacToe {
 		
 		while (true) {
 			new TicTacToe();
-			System.out.println("Play again? (y/N) > ");
+			System.out.print("Play again? (y/N) > ");
 			if (scanner.next().toLowerCase().charAt(0) != 'y') {
 				System.out.println("NOOOOO What have you don--");
 				break;
