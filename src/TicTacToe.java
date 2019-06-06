@@ -22,9 +22,10 @@ public class TicTacToe {
 		
 		while (true) {
 			new TicTacToe();
-			System.out.print("Play again? (y/N) > ");
+			CowGenerator.print("Play again?");
+			System.out.print("(y/N) > ");
 			if (scanner.next().toLowerCase().charAt(0) != 'y') {
-				System.out.println("NOOOOO What have you don--");
+				CowGenerator.print("NOOOOO What have you don--");
 				break;
 			}
 		}
@@ -40,8 +41,8 @@ public class TicTacToe {
 			board.printer.print();
 			try { mainLoopStep(); }
 			catch (DoneException event) {
-				 System.out.println(board.getWinnerString() + " won this game");
-				 break;
+				CowGenerator.print(board.getWinnerString() + " won this game");
+				break;
 			}
 		}
 	}
@@ -68,10 +69,10 @@ public class TicTacToe {
 					board.setStateAt(move, State.x);
 					return;
 				} else {
-					System.out.println("Cell not empty!");
+					CowGenerator.print("Cell not empty!");
 				}
 			} catch (ArrayIndexOutOfBoundsException err) {
-				System.out.println("Invalid number!");
+				CowGenerator.print("Invalid number!");
 			}
 		}
 	}
@@ -86,7 +87,7 @@ public class TicTacToe {
 					System.out.println("Quitting");
 					System.exit(0);
 				} else {
-					System.out.println("That's... not a number.");
+					CowGenerator.print("That's... not a number.");
 				}
 			}
 		}
