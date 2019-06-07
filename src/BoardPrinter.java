@@ -13,8 +13,8 @@ public class BoardPrinter {
 		{ ' ', '└', '─', '─', '─', '┘', ' '}
 	};
 	
-	private static final char vertical = '|';
-	private static final char horizontal = '-';
+	private static final char vertical = '│';
+	private static final char horizontal = '─';
 	
 	private static final int largeCharWidth = 7;
 	private static final int largeCharHeight = 3;
