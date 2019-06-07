@@ -11,6 +11,7 @@ A Tic Tac Toe game programed in Java, with a Command Line Interface.
     - Optimized for the number pad
   - Uses Emus ;)
   - **Uses cows**
+  - Has color
 
 ## Questionable decisions
 
