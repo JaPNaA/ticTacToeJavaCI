@@ -1,16 +1,17 @@
 public class Color {
 	public static String red = "31";
 	public static String green = "32";
-	
-	public static String reset = "39;49";
-	
+
 	private static String beforeColor = "\u001b[";
 	private static String afterColor = "m";
+	
+	public static String resetString = "39;49";
+	public static Color resetColor = new Color(resetString);
 	
 	private String color;
 	
 	public Color() {
-		this.color = beforeColor + reset + afterColor;
+		this.color = beforeColor + resetString + afterColor;
 	}
 	
 	public Color(String color) {
