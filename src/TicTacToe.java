@@ -41,6 +41,7 @@ public class TicTacToe {
 			board.printer.print();
 			try { mainLoopStep(); }
 			catch (DoneException event) {
+				Heatmap.print();
 				CowGenerator.print(board.getWinnerString() + " won this game");
 				break;
 			}
@@ -67,6 +68,7 @@ public class TicTacToe {
 			try {
 				if (board.isEmptyAt(move)) {
 					board.setStateAt(move, State.x);
+					Heatmap.addPlayerMove(move);
 					return;
 				} else {
 					CowGenerator.print("Cell not empty!");
@@ -97,6 +99,7 @@ public class TicTacToe {
 		while (true) {
 			int move = getComputerMove();
 			if (board.isEmptyAt(move)) {
+				Heatmap.addComputerMove(move);
 				board.setStateAt(move, State.o);
 				return;
 			}
