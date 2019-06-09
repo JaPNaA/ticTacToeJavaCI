@@ -10,7 +10,7 @@ A Tic Tac Toe game programed in Java, with a Command Line Interface.
   - You only need to enter one number, once per turn
     - Optimized for the number pad
   - Uses Emus ;)
-  - **Uses cows that DANCE**
+  - **[Uses cows that DANCE](https://youtu.be/1_A4h0z6ihU)**
   - Has color
 
 ## Questionable decisions
