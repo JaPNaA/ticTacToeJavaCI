@@ -5,6 +5,7 @@ enum State { empty, x, o }
 
 public class TicTacToe {
 	private static Scanner scanner;
+	private static final String dancingCowFile = "../dancingCow.animation.txt";
 	
 	public static void main(String[] args) {
 		System.out.println(
@@ -42,9 +43,24 @@ public class TicTacToe {
 			try { mainLoopStep(); }
 			catch (DoneException event) {
 				Heatmap.print();
-				CowGenerator.print(board.getWinnerString() + " won this game");
+				playDancingCowSaying(board.getWinnerString() + " won this game");
 				break;
 			}
+		}
+	}
+	
+	
+	private void playDancingCowSaying(String text) {
+		try {
+			String str = Util.readFileToString(dancingCowFile);
+			AnimationPlayer.play(str, 500, (String frame) -> {
+				CowGenerator.setCow(frame);
+				CowGenerator.print(text);
+			});
+			CowGenerator.resetCow();
+		} catch (Exception err) {
+			err.printStackTrace();
+			throw new Error("An error occured");
 		}
 	}
 	
