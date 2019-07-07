@@ -1,4 +1,4 @@
-# TicTacToe Java CI
+# TicTacToe Java CLI
 
 A Tic Tac Toe game programed in Java, with a Command Line Interface.
 
